@@ -15,12 +15,19 @@ a {
   box-sizing: border-box;
 }
 
+body {
+  color: white;
+  background: rgb(24 24 27);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-  body {
-    color: white;
-    background: black;
-  }
+  
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
