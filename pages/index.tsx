@@ -57,7 +57,7 @@ const Home: NextPage = () => {
           </div>
 
           <div>
-            {brief && brief.map(brief => {
+            {!loading && brief.length > 0 &&  brief.map(brief => {
               return <Brief content={brief.content} created_at={brief.created_at} name={brief.name} title={brief.title} urlProfile={brief.urlProfile} key={brief.title} />
             })}
           </div>
