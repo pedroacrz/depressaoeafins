@@ -3,18 +3,42 @@ import Head from 'next/head'
 import { Brief } from '../components/Brief/Brief'
 import { Header } from '../components/Header/Header'
 import styles from '../styles/home.module.scss'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
-const briefMock = [
+type IBrief =
   {
-    title: 'Título do depoimento',
-    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    urlProfile: "",
-    name: "Fulano de tal",
-    date: "11/08/2022 às 15:03"
+    title: string
+    content: string
+    urlProfile: string
+    name: string
+    created_at: string
   }
-]
+
 
 const Home: NextPage = () => {
+
+  const [brief, setBrief] = useState<IBrief[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function getBriefs() {
+      try {
+        const response = await axios.get('/api/getBrief')
+        setBrief(response.data)
+        console.log(response.data)
+        setLoading(false)
+      }
+      catch (error) {
+        console.log(error)
+        setLoading(false)
+      } 
+    }
+
+    getBriefs()
+
+  }, [])
+
   return (
     <div>
       <Head>
@@ -33,8 +57,8 @@ const Home: NextPage = () => {
           </div>
 
           <div>
-            {briefMock.map(brief => {
-              return <Brief content={brief.content} date={brief.date} title={brief.title} urlProfile={brief.urlProfile} key={brief.title} />
+            {brief && brief.map(brief => {
+              return <Brief content={brief.content} created_at={brief.created_at} name={brief.name} title={brief.title} urlProfile={brief.urlProfile} key={brief.title} />
             })}
           </div>
         </section>
