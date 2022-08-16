@@ -1,0 +1,51 @@
+@import "_variables";
+
+.container {
+    background-color: $primary;
+    width: 100%;
+
+    .content {
+        justify-content: space-between;
+        color: $white;
+        display: flex;
+        align-items: center;
+        padding-left: $paddingLeft;
+        padding-right: $paddingRight;
+        width: 100%;
+
+        .logo {
+            margin-right: 40px;
+            padding: 0;
+            line-height: 0;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: row;
+        }
+
+        ul li {
+            margin-right: 20px;
+        } 
+
+        .buttonLanguage {
+            display: flex;
+            background-color: $terciary;
+            padding: 4px;
+
+            p {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        .content {
+            padding-left: $paddingLeftMobile;
+            padding-right: $paddingRightMobile;
+        }
+    }
+
+}

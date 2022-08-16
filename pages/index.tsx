@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Brief } from '../components/Brief/Brief'
 import { Header } from '../components/Header/Header'
+import styles from '../styles/home.module.scss'
 
 const briefMock = [
   {
@@ -12,6 +13,7 @@ const briefMock = [
     date: "11/08/2022 às 15:03"
   }
 ]
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -24,11 +26,15 @@ const Home: NextPage = () => {
       <main>
         <Header />
 
-        <section className='mt-20 '>
-          <h2 className='font-bold text-xl'>Últimos depoimentos</h2>
-          <div className='mt-10'>
-            { briefMock.map(brief => {
-              return  <Brief content={brief.content} date={brief.date} title={brief.title} urlProfile={brief.urlProfile} key={brief.title}/>
+        <section className={styles.container}>
+          <div className={styles.header}>
+            <h2 className={styles.title}>Últimos depoimentos</h2>
+            <button className={styles.buttonNewBrief}>Novo depoimento</button>
+          </div>
+
+          <div>
+            {briefMock.map(brief => {
+              return <Brief content={brief.content} date={brief.date} title={brief.title} urlProfile={brief.urlProfile} key={brief.title} />
             })}
           </div>
         </section>

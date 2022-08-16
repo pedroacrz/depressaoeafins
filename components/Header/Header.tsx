@@ -1,21 +1,30 @@
 import Link from 'next/link'
+import styles from '../../styles/header.module.scss';
+import facelogo from '../../public/face.svg';
+import instalogo from '../../public/insta.svg';
+import arrow_down from '../../public/arrow_down.svg';
+import Image from 'next/image';
 
 export const Header = () => {
-    
-    return <header className='flex justify-between'>
-        <Link href="/">
-            <h1 className='text-2xl cursor-pointer'>
-                Depressão e afins
-            </h1>
-        </Link>
 
-        <div className='flex items-center'>
-            <Link href="/login">
-                <p className='cursor-pointer'>Entrar</p>
-            </Link>
-            <Link href="/singup">
-            <p className='mr-4 ml-4 cursor-pointer'>Cadastrar</p>
-            </Link>
+    return <header className={styles.container}>
+        <div className={styles.content}>
+            <h1 className={styles.logo}>
+                DA
+            </h1>
+
+            <div className={styles.rightContent}>
+                <ul className={styles.list}>
+                    <li>
+                        <Image src={instalogo} width='24.22' height='24.22' alt="logo instagram" />
+                    </li>
+                    <li>
+                        <Image src={facelogo} width='24.22' height='24.22' alt="logo facebook" />
+                    </li> 
+                </ul> 
+            </div>
+
         </div>
+
     </header>
 }

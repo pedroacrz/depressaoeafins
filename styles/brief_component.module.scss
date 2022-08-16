@@ -1,0 +1,70 @@
+@import "_variables";
+
+
+.container {
+    background-color: $white;
+    padding: 10px;
+    border-radius: 8px;
+
+    .profile {
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        .imageProfile {
+            width: 50px;
+            height: 50px;
+            background-color: $backgroundProfile;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .date {
+            margin-left: 10px;
+            opacity: 70%;
+        }
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .description {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .center {
+        text-align: center;
+
+        .buttonAllContent {
+            background-color: $primary;
+            width: 234px;
+            height: 40px;
+            color: $white;
+            font-size: 16px;
+            font-weight: 400;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .container { 
+        .profile { 
+            .imageProfile {
+                margin-right: 5px;
+            }
+        }
+    }
+}
