@@ -39,7 +39,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Depressão e afins - desabafe</title>
         <meta name="description" content="Depressão e afins - desabafe o quanto quiser, seja livre." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
