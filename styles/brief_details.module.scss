@@ -1,0 +1,33 @@
+@import "_variables";
+
+.container {
+    width: 100%;
+
+    .content {
+        padding-left: $paddingLeft;
+        padding-right: $paddingRight;
+        width: 100%;
+        margin-top: 50px;
+
+        .back {
+            cursor: pointer;
+            background-color: $white;
+            width: auto;
+            padding: 10px;
+            color: $gray;
+            width: 60px;
+            border-radius: 8px;
+            height: 40px;
+        }
+
+        .title {
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+        .brief {
+
+        }
+  
+    }
+}
