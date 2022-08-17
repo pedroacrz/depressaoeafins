@@ -16,7 +16,6 @@ const QuillNoSSRWrapper = dynamic(import("react-quill"), {
 
 const modules = {
   toolbar: [
-    [{ header: "1" }, { header: "2" }, { font: [] }],
     [{ size: [] }],
     ["bold", "italic", "underline", "strike", "blockquote"],
     [
@@ -37,15 +36,7 @@ const modules = {
  * Quill editor formats
  * See https://quilljs.com/docs/formats/
  */
-const formats = [
-  "header",
-  "font",
-  "size",
-  "bold",
-  "italic",
-  "underline",
-  "strike",
-];
+const formats = ["font", "size", "bold", "italic", "underline", "strike"];
 
 const NewBrief: NextPage = () => {
   const [title, setTitle] = useState("");
