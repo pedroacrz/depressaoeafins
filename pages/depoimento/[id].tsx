@@ -58,7 +58,7 @@ const Brief: NextPage = () => {
         {!loading ? (
           <div>
             <p className={styles.title}>{brief?.title}</p>
-            <p className={styles.brief}>{brief?.content}</p>
+            <div className={styles.brief} dangerouslySetInnerHTML={{__html: brief?.content}}/>
           </div>
         ) : (
           <div>

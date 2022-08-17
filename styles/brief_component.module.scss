@@ -55,8 +55,10 @@
         }
     }
 
-    .content {
-        padding: 10px;
+    .brief {
+        max-height: 140px;
+        overflow: hidden;
+        padding: 6px;
     }
 
 }

@@ -25,7 +25,8 @@ export const Brief = (props: BriefData) => {
 
       <div className={styles.content}>
         <h4 className={styles.title}>{props.title}</h4>
-        <p className={styles.description}>{props.content}</p>
+        <div className={styles.brief} dangerouslySetInnerHTML={{ __html: props.content }} />
+
         <div className={styles.center}>
           <Link href={`/depoimento/${props.id}`}>
             <button className={styles.buttonAllContent}>
